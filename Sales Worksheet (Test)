@@ -28,11 +28,6 @@ worksheet:
     properties:
       column_type: MEASURE
       aggregation: SUM
-  - name: Discount
-    column_id: "LINEORDER_1::Discount"
-    properties:
-      column_type: MEASURE
-      aggregation: SUM
   - name: Ship Mode
     column_id: "LINEORDER_1::Ship Mode"
     properties:
