@@ -1,0 +1,39 @@
+answer:
+  name: Total Revenue by Ship Mode
+  tables:
+  - id: Archit Test WS
+    name: Archit Test WS
+  search_query: "[Revenue] [Ship Mode] [Quantity]"
+  answer_columns:
+  - name: Ship Mode
+  - name: Total Quantity
+  - name: Total Revenue
+  table:
+    table_columns:
+    - column_id: Ship Mode
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Total Revenue
+      headline_aggregation: SUM
+    - column_id: Total Quantity
+      headline_aggregation: SUM
+    ordered_column_ids:
+    - Ship Mode
+    - Total Revenue
+    - Total Quantity
+    wrap_table_header: true
+    client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+  chart:
+    type: LINE
+    chart_columns:
+    - column_id: Ship Mode
+    - column_id: Total Revenue
+    - column_id: Total Quantity
+    axis_configs:
+    - x:
+      - Ship Mode
+      y:
+      - Total Quantity
+      - Total Revenue
+    client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":3.0,\"chartSpecific\":{}},\"axisProperties\":{\"61f3bd61-4211-4727-a57d-9f8d03a2f640\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"fc443fd7-60ca-456b-a8a7-4fd14b104c07\":{\"linkedColumns\":[\"Ship Mode\"],\"axisType\":\"X\"},\"58df6f17-089e-4b22-b5c1-2bada2180f8d\":{\"linkedColumns\":[\"Total Quantity\"],\"axisType\":\"Y\",\"isOpposite\":true}},\"systemSeriesColors\":{\"Total Quantity\":\"#2E75F0\",\"Total Revenue\":\"#48D1E0\"},\"version\":\"V3\",\"columnProperties\":{\"Ship Mode\":{},\"Total Revenue\":{},\"Total Quantity\":{}}}"
+  display_mode: CHART_MODE
+guid: e6d153df-9993-4815-80ff-baa710341bc9

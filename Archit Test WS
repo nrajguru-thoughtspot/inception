@@ -38,6 +38,14 @@ worksheet:
     column_id: "LINEORDER_1::Ship Priority"
     properties:
       column_type: ATTRIBUTE
+  - name: Lineorder Suppkey
+    column_id: "LINEORDER_1::Lineorder Suppkey"
+    properties:
+      column_type: ATTRIBUTE
+  - name: Lineorder CustKey
+    column_id: "LINEORDER_1::Lineorder CustKey"
+    properties:
+      column_type: ATTRIBUTE
   properties:
     is_bypass_rls: false
     join_progressive: true
