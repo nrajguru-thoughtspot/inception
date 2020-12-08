@@ -1,0 +1,76 @@
+pinboard:
+  name: Revenue Metrics Pinboard
+  visualizations:
+  - answer:
+      name: Revenue Trends
+      tables:
+      - id: Sales Worksheet
+        name: Sales Worksheet
+      search_query: "[Revenue] [Discount] [Commit Date] [Commit Date].quarterly"
+      answer_columns:
+      - name: Total Revenue
+      - name: Quarter(Commit Date)
+      - name: Total Discount
+      table:
+        table_columns:
+        - column_id: Quarter(Commit Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Revenue
+          headline_aggregation: SUM
+        - column_id: Total Discount
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Quarter(Commit Date)
+        - Total Revenue
+        - Total Discount
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Quarter(Commit Date)
+        - column_id: Total Revenue
+        - column_id: Total Discount
+        axis_configs:
+        - x:
+          - Quarter(Commit Date)
+          y:
+          - Total Revenue
+          - Total Discount
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"0ba72798-e675-4469-985f-38b1bb2406e7\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"c253947c-c159-44ed-bd48-9822d9d16f17\":{\"linkedColumns\":[\"Total Discount\"],\"axisType\":\"Y\",\"isOpposite\":true},\"c2383870-e3b0-4ffe-8a58-8c0222a8a402\":{\"linkedColumns\":[\"Quarter(Commit Date)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total Revenue\":\"#2E75F0\",\"Total Discount\":\"#48D1E0\"},\"version\":\"V3\",\"columnProperties\":{\"Quarter(Commit Date)\":{},\"Total Revenue\":{},\"Total Discount\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_1
+  - answer:
+      name: Supply Cost by Ship Mode
+      tables:
+      - id: Sales Worksheet
+        name: Sales Worksheet
+      search_query: "[Supply Cost as Percent of Revenue] [Ship Mode]"
+      answer_columns:
+      - name: Ship Mode
+      - name: Supply Cost as Percent of Revenue
+      table:
+        table_columns:
+        - column_id: Ship Mode
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Supply Cost as Percent of Revenue
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Ship Mode
+        - Supply Cost as Percent of Revenue
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Ship Mode
+        - column_id: Supply Cost as Percent of Revenue
+        axis_configs:
+        - x:
+          - Ship Mode
+          y:
+          - Supply Cost as Percent of Revenue
+        client_state: "{\"seriesColors\":{\"Supply Cost as Percent of Revenue\":\"#ff8142\"},\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"4cc9d30f-326f-4097-b990-cf580a9e0e57\":{\"linkedColumns\":[\"Supply Cost as Percent of Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"2dd986fa-3955-4ddb-837b-d367450fd074\":{\"linkedColumns\":[\"Ship Mode\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Supply Cost as Percent of Revenue\":\"#747E8C\"},\"version\":\"V3\",\"columnProperties\":{\"Ship Mode\":{},\"Supply Cost as Percent of Revenue\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_2
+guid: da55600b-5bdf-42a7-8dbc-50d49c4becec
