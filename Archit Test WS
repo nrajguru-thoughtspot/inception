@@ -1,0 +1,44 @@
+worksheet:
+  name: Archit Test WS
+  tables:
+  - name: LINEORDER
+  table_paths:
+  - id: LINEORDER_1
+    table: LINEORDER
+    join_path:
+    - {}
+  formulas:
+  - name: fx
+    expr: "[LINEORDER_1::Revenue] * 100"
+  worksheet_columns:
+  - name: Revenue
+    column_id: "LINEORDER_1::Revenue"
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+  - name: Quantity
+    column_id: "LINEORDER_1::Quantity"
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+  - name: Ship Mode
+    column_id: "LINEORDER_1::Ship Mode"
+    properties:
+      column_type: ATTRIBUTE
+  - name: Order Priority
+    column_id: "LINEORDER_1::Order Priority"
+    properties:
+      column_type: ATTRIBUTE
+  - name: Fx
+    formula_id: fx
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+  - name: Ship Priority
+    column_id: "LINEORDER_1::Ship Priority"
+    properties:
+      column_type: ATTRIBUTE
+  properties:
+    is_bypass_rls: false
+    join_progressive: true
+guid: 311485a4-6f4d-4a42-8bc5-08c16724caef
