@@ -201,11 +201,14 @@ pinboard:
         wrap_table_header: true
         client_state: "{\"wrapTableHeader\":true}"
       chart:
-        type: STACKED_COLUMN
+        type: BAR
         chart_columns:
-        - column_id: Ship Mode
-        - column_id: Total Revenue
         - column_id: Color
+          show_data_labels: true
+        - column_id: Ship Mode
+          show_data_labels: true
+        - column_id: Total Revenue
+          show_data_labels: true
         axis_configs:
         - x:
           - Color
@@ -213,7 +216,7 @@ pinboard:
           - Total Revenue
           color:
           - Ship Mode
-        client_state: "{\"dataLabels\":true,\"yAxis\":{},\"chartProperties\":{\"gridLines\":{},\"showStackedLabels\":true,\"showRoundedNumbers\":true,\"chartSpecific\":{}},\"axisProperties\":{\"601348f2-f531-437a-abcc-bbc8d5d4e15e\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"fc173a2a-f4b5-49ce-8834-45c71c848583\":{\"linkedColumns\":[\"Color\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"fob\":\"#06BF7F\",\"mail\":\"#FCC838\",\"rail\":\"#82DFE9\",\"reg air\":\"#48D1E0\",\"ship\":\"#71A1F4\",\"truck\":\"#2E75F0\"},\"version\":\"V2.1\",\"columnProperties\":{\"Color\":{},\"Ship Mode\":{},\"Total Revenue\":{}}}"
+        client_state: "{\"dataLabels\":true,\"yAxis\":{},\"chartProperties\":{\"gridLines\":{},\"showStackedLabels\":true,\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":1.0},\"axisProperties\":{\"d7e853c6-6bec-47c7-aec2-3736cd9be20d\":{\"linkedColumns\":[\"Total Revenue\"],\"axisType\":\"Y\",\"isOpposite\":false},\"aef82a3e-13f8-41e6-a7a2-2e770946fe9a\":{\"linkedColumns\":[\"Color\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"fob\":\"#06BF7F\",\"mail\":\"#FCC838\",\"rail\":\"#82DFE9\",\"reg air\":\"#48D1E0\",\"ship\":\"#71A1F4\",\"truck\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Color\":{\"dataLabels\":true},\"Ship Mode\":{\"dataLabels\":true},\"Total Revenue\":{\"dataLabels\":true}}}"
       display_mode: CHART_MODE
     id: Viz_4
   - answer:
@@ -422,7 +425,7 @@ pinboard:
   layout:
     tiles:
     - visualization_id: Viz_1
-      size: MEDIUM_SMALL
+      size: SMALL
     - visualization_id: Viz_2
       size: SMALL
     - visualization_id: Viz_3
