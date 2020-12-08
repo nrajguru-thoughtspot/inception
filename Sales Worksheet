@@ -21,15 +21,10 @@ worksheet:
       - Lineorder PartKey - Part PartKey
   formulas:
   - name: Supply Cost as Percent of Revenue
-    expr: "sum ( [LINEORDER_1::Supply Cost] ) / sum ( [LINEORDER_1::Revenue] )"
+    expr: "100 * sum ( [LINEORDER_1::Supply Cost] ) / sum ( [LINEORDER_1::Revenue] )"
   worksheet_columns:
   - name: Revenue
     column_id: "LINEORDER_1::Revenue"
-    properties:
-      column_type: MEASURE
-      aggregation: SUM
-  - name: Discount
-    column_id: "LINEORDER_1::Discount"
     properties:
       column_type: MEASURE
       aggregation: SUM
