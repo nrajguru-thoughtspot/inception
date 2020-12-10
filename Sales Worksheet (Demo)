@@ -1,0 +1,61 @@
+worksheet:
+  name: Sales Worksheet (Demo)
+  tables:
+  - name: LINEORDER
+  - name: PART
+  joins:
+  - name: Lineorder PartKey - Part PartKey
+    source: LINEORDER
+    destination: PART
+    type: INNER
+    is_one_to_one: false
+  table_paths:
+  - id: LINEORDER_1
+    table: LINEORDER
+    join_path:
+    - {}
+  - id: PART_1
+    table: PART
+    join_path:
+    - join:
+      - Lineorder PartKey - Part PartKey
+  formulas:
+  - name: Supply Cost as Percent of Revenue
+    expr: "100 * sum ( [LINEORDER_1::Supply Cost] ) / sum ( [LINEORDER_1::Revenue] )"
+  worksheet_columns:
+  - name: Revenue
+    column_id: "LINEORDER_1::Revenue"
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+  - name: Ship Mode
+    column_id: "LINEORDER_1::Ship Mode"
+    properties:
+      column_type: ATTRIBUTE
+  - name: Commit Date
+    column_id: "LINEORDER_1::Commit Date"
+    properties:
+      column_type: ATTRIBUTE
+      calendar: calendar
+  - name: Color
+    column_id: "PART_1::Color"
+    properties:
+      column_type: ATTRIBUTE
+  - name: Size
+    column_id: "PART_1::Size"
+    properties:
+      column_type: ATTRIBUTE
+  - name: Supply Cost as Percent of Revenue
+    formula_id: Supply Cost as Percent of Revenue
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+  - name: Supply Cost
+    column_id: "LINEORDER_1::Supply Cost"
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+  properties:
+    is_bypass_rls: false
+    join_progressive: true
+guid: a28fd9d6-80a8-43cf-a413-b3cf86ff1a51
